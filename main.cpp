@@ -1,5 +1,4 @@
 #include <fstream>
-#include <random>
 #include <string>
 #include "sort.h"
 #include "random.h" 
@@ -32,17 +31,17 @@ int main(int argc, char** argv)
     generateRandomArray(randomArray, size, RANDOM_LIMIT);
 
 
-    std::ofstream beforeSortFile("before_sort.txt");
-    std::ofstream afterSortFile("after_sort.txt");
+    std::ofstream beforeSortFile("unsorted.txt");
+    std::ofstream afterSortFile("sorted.txt");
 
 
     beforeSortFile << "Before sort:" << std::endl;
-    writeArrayToFile(randomArray, size, "before_sort.txt");
+    writeArrayToFile(randomArray, size, "unsorted.txt");
 
     mergeSort(randomArray, size);
 
     afterSortFile << "After sort:" << std::endl;
-    writeArrayToFile(randomArray, size, "after_sort.txt");
+    writeArrayToFile(randomArray, size, "sorted.txt");
 
     delete[] randomArray;
 

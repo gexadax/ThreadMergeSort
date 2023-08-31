@@ -1,7 +1,4 @@
-#include "random.h"
 #include <cstdlib>
-
-
 
 void generateRandomArray(int* arr, const size_t size, const int limit)
 {
